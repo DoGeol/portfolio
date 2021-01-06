@@ -11,6 +11,7 @@ const StyledMain = styled.div`
 `;
 
 const ContentWrap = styled.div`
+  margin-top: 50px;
   flex: 1;
 `;
 
