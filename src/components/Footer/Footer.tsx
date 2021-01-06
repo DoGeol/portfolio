@@ -21,7 +21,7 @@ const StyledFooter = styled.footer`
   width: auto;
   background: #39424c;
   padding: 0 20px;
-  margin: 30px 0;
+  margin-top: 30px;
   height: 150px;
   color: gray;
   ${ContentsWrapper}
