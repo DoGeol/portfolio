@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconCard from './IconCard';
 
-const MainNavContainer = styled.div`
+const MainNavWrapper = styled.div`
   top: 0;
   left: 0;
   width: 50px;
@@ -45,7 +45,7 @@ const NavWarpper = styled.nav`
 
 function MainNav() {
   return (
-    <MainNavContainer>
+    <MainNavWrapper>
       <NavWarpper>
         <IconCard faType={'fa-home'} />
         <IconCard faType={'fa-home'} />
@@ -54,7 +54,7 @@ function MainNav() {
       <NavWarpper>
         <IconCard faType={'fa-cog'} />
       </NavWarpper>
-    </MainNavContainer>
+    </MainNavWrapper>
   );
 }
 
