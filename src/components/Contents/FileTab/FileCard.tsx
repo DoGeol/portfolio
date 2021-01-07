@@ -64,7 +64,7 @@ function FileCard(props: FileCardProps) {
         isSelect ?
           <CloseBtn className='fas fa-times' onClick={() => {
             onSelected(null);
-            history.push('/');
+            history.push('/portfolio');
           }} />
           : null
       }

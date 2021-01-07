@@ -54,12 +54,12 @@ export default function Main() {
             <FileTab />
             <Article>
               <Switch>
-                <Route exact path={'/'}>ROOT</Route>
-                <Route path={'/project'} component={Project} />
-                <Route path={'/skill'} component={Skill} />
-                <Route path={'/about'} component={About} />
-                <Route path={'/notFound'} component={NotFound} />
-                <Redirect path='*' to={'/notFound'} />
+                <Route exact path={'/portfolio'}>ROOT</Route>
+                <Route path={'/portfolio/project'} component={Project} />
+                <Route path={'/portfolio/skill'} component={Skill} />
+                <Route path={'/portfolio/about'} component={About} />
+                <Route path={'/portfolio/notFound'} component={NotFound} />
+                <Redirect path='*' to={'/portfolio/notFound'} />
               </Switch>
             </Article>
           </Contents>
