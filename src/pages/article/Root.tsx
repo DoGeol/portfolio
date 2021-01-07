@@ -1,8 +1,11 @@
 import React from 'react';
+import { ArticleContainer } from '../../styled/GlobalStyles';
 
 function Root() {
   return (
-    <div>Root...</div>
+    <ArticleContainer>
+      Root
+    </ArticleContainer>
   );
 }
 

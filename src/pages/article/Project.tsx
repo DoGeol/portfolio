@@ -1,8 +1,11 @@
 import React from 'react';
+import { ArticleContainer } from '../../styled/GlobalStyles';
 
 function Project() {
   return (
-    <div>Project...</div>
+    <ArticleContainer>
+      Project
+    </ArticleContainer>
   );
 }
 

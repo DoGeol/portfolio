@@ -1,8 +1,11 @@
 import React from 'react';
+import { ArticleContainer } from '../../styled/GlobalStyles';
 
 function NotFound() {
   return (
-    <div>NotFound...</div>
+    <ArticleContainer>
+      Not Found
+    </ArticleContainer>
   );
 }
 
