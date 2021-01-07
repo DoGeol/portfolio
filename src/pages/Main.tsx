@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import GlobalStyles from '../styled/GlobalStyles';
 import styled from 'styled-components';
 import MainNav from '../components/MainNav/MainNav';
 import Footer from '../components/Footer/Footer';
-import NotFound from './NotFound';
-import About from './About';
-import Skill from './Skill';
-import Project from './Project';
+import Root from './article/Root';
+import FileTab from '../components/Contents/FileTab/FileTab';
+import Loading from './article/Loading';
 
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from '../modules';
-import FileTab from '../components/Contents/FileTab/FileTab';
+
+const About = lazy(() => import('./article/About'));
+const Project = lazy(() => import('./article/Project'));
+const Skill = lazy(() => import('./article/Skill'));
+const NotFound = lazy(() => import('./article/NotFound'));
 
 const store = createStore(rootReducer);
 
@@ -53,14 +56,16 @@ export default function Main() {
           <Contents>
             <FileTab />
             <Article>
-              <Switch>
-                <Route exact path={'/portfolio'}>ROOT</Route>
-                <Route path={'/portfolio/project'} component={Project} />
-                <Route path={'/portfolio/skill'} component={Skill} />
-                <Route path={'/portfolio/about'} component={About} />
-                <Route path={'/portfolio/notFound'} component={NotFound} />
-                <Redirect path='*' to={'/portfolio/notFound'} />
-              </Switch>
+              <Suspense fallback={<Loading />}>
+                <Switch>
+                  <Route exact path={'/portfolio'} component={Root} />
+                  <Route path={'/portfolio/project'} component={Project} />
+                  <Route path={'/portfolio/skill'} component={Skill} />
+                  <Route path={'/portfolio/about'} component={About} />
+                  <Route path={'/portfolio/notFound'} component={NotFound} />
+                  <Redirect path='*' to={'/portfolio/notFound'} />
+                </Switch>
+              </Suspense>
             </Article>
           </Contents>
           <Footer />
