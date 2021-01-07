@@ -3,8 +3,7 @@ import { ArticleContainer } from '../../styled/GlobalStyles';
 
 function Root() {
   return (
-    <ArticleContainer>
-      Root
+    <ArticleContainer align='center'>
     </ArticleContainer>
   );
 }
