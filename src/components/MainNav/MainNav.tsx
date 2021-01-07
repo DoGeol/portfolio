@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconCard from './IconCard/IconCard';
+import IconCard from './IconCard';
 
 const MainNavContainer = styled.div`
   top: 0;
@@ -20,6 +20,7 @@ const MainNavContainer = styled.div`
     justify-content: space-between;
     height: 50px;
     width: 100%;
+    z-index: 9999;
   }
 `;
 
