@@ -13,6 +13,8 @@ const CloseBtn = styled.i`
 `;
 
 const FileName = styled.span`
+  margin-left: 5px;
+
   &:hover {
     color: #d0d0d0;
   }
@@ -20,7 +22,6 @@ const FileName = styled.span`
 
 const FileIcon = styled.i<{ color: string }>`
   font-size: 15px;
-  margin-right: 5px;
   color: ${(props) => props.color || 'gray'};
 `;
 
