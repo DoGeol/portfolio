@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import GlobalStyles from '../styled/GlobalStyles';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import theme from '../styled/theme';
 import MainNav from '../components/MainNav/MainNav';
 import Footer from '../components/Footer/Footer';
 import Root from './article/Root';
@@ -22,7 +23,7 @@ const store = createStore(rootReducer);
 const AppWrapper = styled.div`
   width: calc(100% - 50px);
   position: absolute;
-  @media screen and (max-width: 768px) {
+  @media screen and ${props => props.theme.mobile} {
     width: 100%;
   }
 `;
@@ -33,7 +34,7 @@ const Contents = styled.section`
   right: 0;
   width: 100%;
   position: relative;
-  @media screen and (max-width: 768px) {
+  @media screen and ${props => props.theme.mobile} {
     top: 50px;
     left: 0;
   }
@@ -50,26 +51,28 @@ export default function Main() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <AppWrapper>
-          <GlobalStyles />
-          <MainNav />
-          <Contents>
-            <FileTab />
-            <Article>
-              <Suspense fallback={<Loading />}>
-                <Switch>
-                  <Route exact path={'/portfolio'} component={Root} />
-                  <Route path={'/portfolio/project'} component={Project} />
-                  <Route path={'/portfolio/skill'} component={Skill} />
-                  <Route path={'/portfolio/about'} component={About} />
-                  <Route path={'/portfolio/notFound'} component={NotFound} />
-                  <Redirect path='*' to={'/portfolio/notFound'} />
-                </Switch>
-              </Suspense>
-            </Article>
-          </Contents>
-          <Footer />
-        </AppWrapper>
+        <ThemeProvider theme={theme}>
+          <AppWrapper>
+            <GlobalStyles />
+            <MainNav />
+            <Contents>
+              <FileTab />
+              <Article>
+                <Suspense fallback={<Loading />}>
+                  <Switch>
+                    <Route exact path={'/portfolio'} component={Root} />
+                    <Route path={'/portfolio/project'} component={Project} />
+                    <Route path={'/portfolio/skill'} component={Skill} />
+                    <Route path={'/portfolio/about'} component={About} />
+                    <Route path={'/portfolio/notFound'} component={NotFound} />
+                    <Redirect path='*' to={'/portfolio/notFound'} />
+                  </Switch>
+                </Suspense>
+              </Article>
+            </Contents>
+            <Footer />
+          </AppWrapper>
+        </ThemeProvider>
       </Provider>
     </BrowserRouter>
   );

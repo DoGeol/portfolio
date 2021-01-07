@@ -14,7 +14,7 @@ const StyledIconCard = styled.i`
   }
 ;
 
-  @media screen and (max-width: 768px) {
+  @media screen and ${props => props.theme.mobile} {
     margin-bottom: 0;
   }
 `;
