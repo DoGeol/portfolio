@@ -5,7 +5,7 @@ import MainNav from '../components/MainNav/MainNav';
 import Footer from '../components/Footer/Footer';
 import Root from './article/Root';
 import FileTab from '../components/Contents/FileTab/FileTab';
-import Loading from './article/Loading';
+import Loading from '../components/Common/Loading';
 
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';

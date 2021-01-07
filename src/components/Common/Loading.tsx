@@ -19,7 +19,7 @@ const LoadingWrapper = styled.div`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  animation: ${spin} 2s linear infinite;
+  animation: ${spin} 1.5s linear infinite;
 `;
 
 function Loading() {
