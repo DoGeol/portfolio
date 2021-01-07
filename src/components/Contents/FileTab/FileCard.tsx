@@ -26,7 +26,7 @@ const FileIcon = styled.i<{ color: string }>`
 `;
 
 const FileCardWrapper = styled.div<{ background: string }>`
-  padding: 8px 20px;
+  padding: 7px 20px;
   font-size: 13px;
   color: gray;
   border-right: 1px solid hsl(213, 12%, 19%);
