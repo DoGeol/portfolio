@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconCard from './IconCard/IconCard';
 
-const MainNavContainer = styled.nav`
+const MainNavContainer = styled.div`
   top: 0;
   left: 0;
   width: 50px;
