@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import useContents from '../useContents';
 
 const CloseBtn = styled.i`
@@ -49,7 +49,11 @@ function FileCard(props: FileCardProps) {
   const { id, fileType, name, url, faClass, color } = props.info;
   const { selectedHeaderId, onSelected } = useContents();
   const isSelect: boolean = id === selectedHeaderId;
-  let history = useHistory();
+  const location = useLocation();
+  const history = useHistory();
+  if (location.pathname === url) {
+    onSelected(id);
+  }
   let fileOnClick = () => {
     if (isSelect) return;
     onSelected(id);
