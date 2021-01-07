@@ -1,29 +1,21 @@
 import React from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
 import GlobalStyles from '../styled/GlobalStyles';
 import styled from 'styled-components';
+import MainNav from '../components/MainNav/MainNav';
+import Footer from '../components/Footer/Footer';
+import Contents from '../components/Contents/Contents';
 
-const StyledMain = styled.div`
+const AppWrapper = styled.div`
   display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-`;
-
-const ContentWrap = styled.div`
-  margin-top: 50px;
-  flex: 1;
 `;
 
 export default function Main() {
   return (
-    <StyledMain>
+    <>
       <GlobalStyles />
-      <Header />
-      <ContentWrap>
-        <div>메인페이지</div>
-      </ContentWrap>
+      <MainNav />
+      <Contents />
       <Footer />
-    </StyledMain>
+    </>
   );
 }
