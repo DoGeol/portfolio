@@ -16,7 +16,7 @@ const globalStyles = createGlobalStyle`
 
   body {
     font-size: 15px;
-    //background-color: rgba(20, 20, 20, 1);
+    background-color: #282c34;
   }
 `;
 
