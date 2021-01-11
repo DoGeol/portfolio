@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import IconCard from './IconCard';
+import { mainNav } from '../../data/portfolio';
 
 const MainNavWrapper = styled.div`
   top: 0;
@@ -47,12 +48,22 @@ function MainNav() {
   return (
     <MainNavWrapper>
       <NavWarpper>
-        <IconCard faType={'fa-home'} />
-        <IconCard faType={'fa-home'} />
-        <IconCard faType={'fa-home'} />
+        {
+          mainNav.map((item, idx) => {
+            return (
+              <IconCard mainNavInfo={item} key={`mainNavItem` + idx} />
+            );
+          })
+        }
       </NavWarpper>
       <NavWarpper>
-        <IconCard faType={'fa-cog'} />
+        <IconCard mainNavInfo={{
+          id: 0,
+          name: 'Open to Settings Tab',
+          url: '#',
+          faClass: 'fas fa-cog',
+          type: 'current',
+        }} />
       </NavWarpper>
     </MainNavWrapper>
   );
