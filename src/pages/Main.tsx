@@ -41,7 +41,6 @@ const Contents = styled.section`
 `;
 
 const Article = styled.div`
-  height: 2000px;
   width: 100%;
   background: #282c34;
   box-sizing: border-box;
