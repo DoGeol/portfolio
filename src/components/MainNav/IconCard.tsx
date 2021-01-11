@@ -16,7 +16,7 @@ const StyledIconCard = styled.i`
   }
 ;
 
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     margin-bottom: 0;
   }
 `;

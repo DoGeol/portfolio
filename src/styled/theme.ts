@@ -1,4 +1,4 @@
-const size = {
+const screenSize = {
   'screen-xsm': '320px',
   'screen-sm': '768px',
   'screen-md': '1024px',
@@ -6,10 +6,19 @@ const size = {
   'screen-xlg': '1440px',
 };
 
+const viewport = {
+  mobile: `(max-width: ${screenSize['screen-sm']})`,
+  tablet: `(max-width: ${screenSize['screen-lg']} - 1)`,
+  desktop: `(min-width: ${screenSize['screen-lg']})`,
+};
+
+const color = {
+  background: '#282c34',
+};
+
 const theme = {
-  mobile: `(max-width: ${size['screen-sm']})`,
-  tablet: `(max-width: ${size['screen-lg']} - 1)`,
-  desktop: `(min-width: ${size['screen-lg']})`,
+  viewport,
+  color,
 };
 
 export default theme;

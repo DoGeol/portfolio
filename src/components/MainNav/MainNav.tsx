@@ -15,7 +15,7 @@ const MainNavWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +35,7 @@ const NavWarpper = styled.nav`
     margin-bottom: 20px;
   }
 
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     flex-direction: row;
     padding: 0 10px;
     &:last-child {

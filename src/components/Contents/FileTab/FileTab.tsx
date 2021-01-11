@@ -12,7 +12,7 @@ const FileTabWrapper = styled.div`
   background: #21252b;
   display: flex;
   align-items: center;
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     position: fixed;
     top: 50px;
   }
