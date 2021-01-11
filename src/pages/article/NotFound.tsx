@@ -15,12 +15,17 @@ const HighlightLink = styled.a`
 
   &:hover {
     color: whitesmoke;
+    text-decoration: underline;
   }
+`;
+
+const ArticleContainerWrapper = styled(ArticleContainer)`
+  height: calc(100vh - 80px);
 `;
 
 function NotFound() {
   return (
-    <ArticleContainer align='center'>
+    <ArticleContainerWrapper align='center'>
       <NotFoundIcon className='far fa-frown' />
       <ArticleSection>
         <Title textAlign='cetner'>Page not found</Title>
@@ -30,7 +35,7 @@ function NotFound() {
           Issues</HighlightLink>를 통해
           문의해 주시기 바랍니다.</p>
       </ArticleSection>
-    </ArticleContainer>
+    </ArticleContainerWrapper>
   );
 }
 
