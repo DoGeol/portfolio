@@ -48,13 +48,11 @@ export const ArticleContainer = styled.div<any>`
     }
   }}
   > ${ArticleMainTitle}
-;
-
   > ${ArticleSubTitle}
-;
-
-  ${'p'} {
-    margin-top: 10px;
+  p {
+    &:first-child {
+      margin-top: 10px;
+    }
   }
 
   @media screen and ${props => props.theme.viewport.mobile} {
