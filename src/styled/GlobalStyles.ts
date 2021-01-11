@@ -24,16 +24,17 @@ export const ArticleContainer = styled.div<any>`
   width: 100%;
   height: calc(100vh - 52px);
   padding: 20px;
-  display: flex;
-  ${(props) => {
-    if (props.align === 'center') {
-      return css`
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      `;
-    }
-  }}
+  display: block;
+
+  ${'h1'} {
+    color: #365fe3;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  @media screen and ${props => props.theme.mobile} {
+    margin-top: 30px;
+  }
 `;
 
 export default globalStyles;
