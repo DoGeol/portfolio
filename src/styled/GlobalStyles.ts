@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 const globalStyles = createGlobalStyle`
@@ -16,24 +16,8 @@ const globalStyles = createGlobalStyle`
 
   body {
     font-size: 15px;
-    //background-color: rgba(20, 20, 20, 1);
+    background-color: #282c34;
   }
-`;
-
-export const ArticleContainer = styled.div<any>`
-  width: 100%;
-  height: calc(100vh - 52px);
-  padding: 20px;
-  display: flex;
-  ${(props) => {
-    if (props.align === 'center') {
-      return css`
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      `;
-    }
-  }}
 `;
 
 export default globalStyles;

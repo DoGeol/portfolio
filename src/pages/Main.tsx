@@ -23,7 +23,7 @@ const store = createStore(rootReducer);
 const AppWrapper = styled.div`
   width: calc(100% - 50px);
   position: absolute;
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     width: 100%;
   }
 `;
@@ -34,17 +34,17 @@ const Contents = styled.section`
   right: 0;
   width: 100%;
   position: relative;
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     top: 50px;
     left: 0;
   }
 `;
 
 const Article = styled.div`
-  height: 2000px;
   width: 100%;
   background: #282c34;
   box-sizing: border-box;
+  display: flex;
 `;
 
 export default function Main() {

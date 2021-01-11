@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FileCard from './FileCard';
-import { headerInfo } from '../../../data/portfolio';
+import { header } from '../../../data/portfolio';
 
 const FileTabWrapper = styled.div`
   top: 0;
@@ -12,13 +12,17 @@ const FileTabWrapper = styled.div`
   background: #21252b;
   display: flex;
   align-items: center;
+  @media screen and ${props => props.theme.viewport.mobile} {
+    position: fixed;
+    top: 50px;
+  }
 `;
 
 function FileTab() {
   return (
     <FileTabWrapper>
       {
-        headerInfo.map((file, idx) => {
+        header.map((file, idx) => {
           return <FileCard info={file} key={`filecard-${idx}`} />;
         })
       }

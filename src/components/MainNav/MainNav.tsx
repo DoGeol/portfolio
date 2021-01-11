@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import IconCard from './IconCard';
+import { mainNav } from '../../data/portfolio';
 
 const MainNavWrapper = styled.div`
   top: 0;
@@ -14,7 +15,7 @@ const MainNavWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -34,7 +35,7 @@ const NavWarpper = styled.nav`
     margin-bottom: 20px;
   }
 
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     flex-direction: row;
     padding: 0 10px;
     &:last-child {
@@ -47,12 +48,22 @@ function MainNav() {
   return (
     <MainNavWrapper>
       <NavWarpper>
-        <IconCard faType={'fa-home'} />
-        <IconCard faType={'fa-home'} />
-        <IconCard faType={'fa-home'} />
+        {
+          mainNav.map((item, idx) => {
+            return (
+              <IconCard mainNavInfo={item} key={`mainNavItem` + idx} isHome={idx === 0} />
+            );
+          })
+        }
       </NavWarpper>
       <NavWarpper>
-        <IconCard faType={'fa-cog'} />
+        <IconCard mainNavInfo={{
+          id: 0,
+          name: 'Open to Settings Tab',
+          url: '#',
+          faClass: 'fas fa-cog',
+          type: 'current',
+        }} isHome={false} />
       </NavWarpper>
     </MainNavWrapper>
   );

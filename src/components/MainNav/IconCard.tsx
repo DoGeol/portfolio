@@ -1,5 +1,7 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import useMainNav from './useMainNav';
 
 const StyledIconCard = styled.i`
   color: #9599a0;
@@ -14,18 +16,44 @@ const StyledIconCard = styled.i`
   }
 ;
 
-  @media screen and ${props => props.theme.mobile} {
+  @media screen and ${props => props.theme.viewport.mobile} {
     margin-bottom: 0;
   }
 `;
 
 interface IconCardProps {
-  faType: string;
+  mainNavInfo: {
+    id: number;
+    name: string;
+    url: string;
+    faClass: string;
+    type: string;
+  },
+  isHome: boolean
 }
 
 function IconCard(props: IconCardProps) {
+  const isTarget: boolean = props.mainNavInfo.type === 'newWindow';
+  const target: string = isTarget ? '_blank' : '';
+  const history = useHistory();
+  const { onSelected } = useMainNav();
+  let homeClick = () => {
+    if (props.isHome) {
+      onSelected(null);
+      history.push(`/portfolio`);
+    }
+  };
   return (
-    <StyledIconCard className={`fas ${props.faType}`} />
+    <>
+      {
+        isTarget ?
+          <a href={props.mainNavInfo.url} target={target} title={props.mainNavInfo.name}>
+            <StyledIconCard className={`${props.mainNavInfo.faClass}`} />
+          </a>
+          :
+          <StyledIconCard className={`${props.mainNavInfo.faClass}`} onClick={homeClick} />
+      }
+    </>
   );
 }
 

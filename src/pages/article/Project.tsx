@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleContainer } from '../../styled/GlobalStyles';
+import { ArticleContainer } from '../../styled/common/ArticleStyled';
 
 function Project() {
   return (

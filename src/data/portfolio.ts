@@ -1,4 +1,4 @@
-export const headerInfo = [
+export const header = [
   {
     id: 0,
     fileType: 'html',
@@ -22,5 +22,22 @@ export const headerInfo = [
     url: '/portfolio/project',
     faClass: 'fas fa-file-code',
     color: 'gray',
+  },
+];
+
+export const mainNav = [
+  {
+    id: 0,
+    name: 'Move to home',
+    url: '/portfolio',
+    faClass: 'fas fa-home',
+    type: 'current',
+  },
+  {
+    id: 1,
+    name: 'Move to DoGeol`s Github',
+    url: 'https://github.com/DoGeol',
+    faClass: 'fab fa-github',
+    type: 'newWindow',
   },
 ];
