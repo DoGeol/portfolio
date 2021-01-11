@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { mainNav } from '../../data/portfolio';
+import useMainNav from './useMainNav';
 
 const StyledIconCard = styled.i`
   color: #9599a0;
@@ -28,12 +28,21 @@ interface IconCardProps {
     url: string;
     faClass: string;
     type: string;
-  }
+  },
+  isHome: boolean
 }
 
 function IconCard(props: IconCardProps) {
   const isTarget: boolean = props.mainNavInfo.type === 'newWindow';
   const target: string = isTarget ? '_blank' : '';
+  const history = useHistory();
+  const { onSelected } = useMainNav();
+  let homeClick = () => {
+    if (props.isHome) {
+      onSelected(null);
+      history.push(`/portfolio`);
+    }
+  };
   return (
     <>
       {
@@ -42,9 +51,7 @@ function IconCard(props: IconCardProps) {
             <StyledIconCard className={`${props.mainNavInfo.faClass}`} />
           </a>
           :
-          <Link to={props.mainNavInfo.url} target={target} title={props.mainNavInfo.name}>
-            <StyledIconCard className={`${props.mainNavInfo.faClass}`} />
-          </Link>
+          <StyledIconCard className={`${props.mainNavInfo.faClass}`} onClick={homeClick} />
       }
     </>
   );

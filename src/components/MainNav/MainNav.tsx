@@ -51,7 +51,7 @@ function MainNav() {
         {
           mainNav.map((item, idx) => {
             return (
-              <IconCard mainNavInfo={item} key={`mainNavItem` + idx} />
+              <IconCard mainNavInfo={item} key={`mainNavItem` + idx} isHome={idx === 0} />
             );
           })
         }
@@ -63,7 +63,7 @@ function MainNav() {
           url: '#',
           faClass: 'fas fa-cog',
           type: 'current',
-        }} />
+        }} isHome={false} />
       </NavWarpper>
     </MainNavWrapper>
   );
