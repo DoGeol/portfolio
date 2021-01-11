@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
-import useContents from '../useContents';
+import useFileTab from './useFileTab';
 
 const CloseBtn = styled.i`
   margin-left: 10px;
@@ -47,7 +47,7 @@ interface FileCardProps {
 
 function FileCard(props: FileCardProps) {
   const { id, fileType, name, url, faClass, color } = props.info;
-  const { selectedHeaderId, onSelected } = useContents();
+  const { selectedHeaderId, onSelected } = useFileTab();
   const isSelect: boolean = id === selectedHeaderId;
   const location = useLocation();
   const history = useHistory();
