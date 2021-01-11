@@ -44,22 +44,14 @@ const Article = styled.div`
   width: 100%;
   background: #282c34;
   box-sizing: border-box;
-  height: calc(100vh - 80px);
   display: flex;
 `;
 
-const Background = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background: ${(props) => props.theme.color.background};
-`;
 export default function Main() {
   return (
     <BrowserRouter>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <Background />
           <AppWrapper>
             <GlobalStyles />
             <MainNav />
