@@ -28,12 +28,11 @@ function NotFound() {
     <ArticleContainerWrapper align='center'>
       <NotFoundIcon className='far fa-frown' />
       <ArticleSection>
-        <Title textAlign='cetner'>Page not found</Title>
+        <Title textAlign='center'>Page not found</Title>
         <p>존재하지 않는 주소를 입력하셨거나,</p>
         <p>요청하신 페이지의 주소가 변경, 삭제되어 찾을 수 없습니다.</p>
         <p>궁금하신 점이 있으시면 언제든 <HighlightLink href='https://github.com/DoGeol/portfolio/issues' target='_blank'>Github
-          Issues</HighlightLink>를 통해
-          문의해 주시기 바랍니다.</p>
+          Issues</HighlightLink>를 통해 문의해 주시기 바랍니다.</p>
       </ArticleSection>
     </ArticleContainerWrapper>
   );
